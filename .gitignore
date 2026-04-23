@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# safety: never commit memory, session logs, or personal notes to a public repo
+MEMORY.md
+memory/
+.claude/
+.claude-*/
+session-*.md
+SESSION_*.md
+NOTES.md
+TODO.md
+PERSONAL.md
+*.secret
+*.secrets
+secrets.json
+credentials.json
+
+# safety: never commit demo screenshots or clinic data dumps
+/clinicos-website-assets/
+/public/shots/raw/
+*.sql.dump
