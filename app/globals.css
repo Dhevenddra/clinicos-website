@@ -211,3 +211,28 @@ html, body {
   outline-offset: 3px;
   border-radius: 3px;
 }
+
+/* Press feedback — per emil-design-eng: every pressable has scale(0.97) on :active.
+ * Specify exact properties, ease-out, keep under 180ms. */
+button,
+a[role="button"],
+[data-press] {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+button:active,
+a[role="button"]:active,
+[data-press]:active {
+  transform: scale(0.97);
+}
+@media (hover: hover) and (pointer: fine) {
+  a:not([role="button"]) {
+    transition: color 180ms ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  button:active,
+  a[role="button"]:active,
+  [data-press]:active {
+    transform: none;
+  }
+}

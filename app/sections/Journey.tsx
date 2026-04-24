@@ -13,7 +13,7 @@ const tagTone: Record<Milestone["tag"], string> = {
   ops:        "text-[var(--color-accent-ink)]",
 };
 
-function MilestoneRow({ m, i }: { m: Milestone; i: number }) {
+function MilestoneRow({ m }: { m: Milestone }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -62,8 +62,8 @@ export default function Journey() {
       }
     >
       <div>
-        {timeline.map((m, i) => (
-          <MilestoneRow key={m.session} m={m} i={i} />
+        {timeline.map((m) => (
+          <MilestoneRow key={m.session} m={m} />
         ))}
       </div>
     </SectionShell>
